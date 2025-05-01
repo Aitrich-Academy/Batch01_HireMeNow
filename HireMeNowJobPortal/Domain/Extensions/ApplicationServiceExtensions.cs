@@ -1,12 +1,21 @@
-﻿using System;
+﻿using Domain.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain
+namespace Domain.Extensions
 {
-    internal class ApplicationServiceExtensions1
+    public static class ApplicationServiceExtensions
     {
+        public static IServiceCollection AddApplicationServices1(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddDbContext<NewDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            return services;
+        }
     }
 }
