@@ -9,6 +9,7 @@ namespace HireMeNow_WebAPI.Extensions
         {
             services.AddDbContext<NewDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
             return services;
+
         }
     }
 }
