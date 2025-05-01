@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Domain.Enums
 {
-    internal class Roles
+    public  enum Roles
     {
+        JOB_SEEKER, ADMIN, JOB_PROVIDER, COMPANY_USER
     }
 }
