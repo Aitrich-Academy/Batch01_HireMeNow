@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{A6719DC2-D6B2-4276-8DE8-7B5D77D9D5FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HireMeNow_WebAPI", "HireMeNow_WebAPI\HireMeNow_WebAPI.csproj", "{5841D588-9746-4E6C-8A32-72427A5F8EBA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6719DC2-D6B2-4276-8DE8-7B5D77D9D5FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6719DC2-D6B2-4276-8DE8-7B5D77D9D5FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6719DC2-D6B2-4276-8DE8-7B5D77D9D5FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6719DC2-D6B2-4276-8DE8-7B5D77D9D5FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5841D588-9746-4E6C-8A32-72427A5F8EBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5841D588-9746-4E6C-8A32-72427A5F8EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5841D588-9746-4E6C-8A32-72427A5F8EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5841D588-9746-4E6C-8A32-72427A5F8EBA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {82037F27-CDD7-4F08-A6E5-7FDC41CB4FC8}
+	EndGlobalSection
+EndGlobal
