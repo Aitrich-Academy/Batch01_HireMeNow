@@ -14,7 +14,7 @@ namespace Domain.Extensions
     {
         public static IServiceCollection AddApplicationServices1(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<NewDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            
             return services;
         }
     }
