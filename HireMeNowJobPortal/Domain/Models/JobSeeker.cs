@@ -17,7 +17,7 @@ public partial class JobSeeker
     public string Phone { get; set; } = null!;
     public string Email { get; set; } = null!;
     public byte[]? Image { get; set; } = null!;
-    public int Role { get; set; }
+    public Role? Role { get; set; }
     public virtual ICollection<JobSeekerProfile> JobSeekerProfiles { get; set; } = new List<JobSeekerProfile>();
     public virtual ICollection<Interview> Interviews { get; set; } = new List<Interview>();
     public virtual ICollection<SavedJob> SavedJobs { get; set; } = new List<SavedJob>();

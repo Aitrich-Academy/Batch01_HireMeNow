@@ -26,7 +26,7 @@ namespace Domain.Models
         [ForeignKey(nameof(Resume))]
         public Guid Resume_id { get; set; }
         public string? CoverLetter { get; set; }
-        public DateTime Datesubmitted { get; set; }
+        public DateTime DateSubmitted { get; set; }
         public Status Status { get; set; }
         public virtual JobPost? JobPost { get; set; }
         public virtual JobSeeker? Seeker { get; set; }

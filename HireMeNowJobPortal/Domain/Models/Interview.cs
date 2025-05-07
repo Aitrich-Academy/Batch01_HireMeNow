@@ -28,7 +28,7 @@ namespace Domain.Models
 		public Guid? ApplicationId { get; set; }
 
         [ForeignKey(nameof(CompanyUser))]
-        public Guid? SheduledBy { get; set; }
+        public Guid? ScheduledBy { get; set; }
 
         [ForeignKey(nameof(Company))]
         public Guid CompanyId { get; set; }

@@ -84,7 +84,7 @@ public partial class DbHireMeNowWebApiContext : DbContext
               .HasConstraintName("FK_Interview_ApplicationId");
 
             entity.HasOne(d => d.CompanyUser).WithMany(p => p.Interviews)
-              .HasForeignKey(d => d.SheduledBy)
+              .HasForeignKey(d => d.ScheduledBy)
               .HasConstraintName("FK_Interview_ScheduledBy");
 
             entity.HasOne(d => d.Company).WithMany(p => p.Interviews)
