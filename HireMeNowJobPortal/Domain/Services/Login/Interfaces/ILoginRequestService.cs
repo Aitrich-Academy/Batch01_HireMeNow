@@ -1,4 +1,4 @@
-﻿using Domain.Services.Login.DTOs;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,6 @@ namespace Domain.Services.Login.Interfaces
 {
     public interface ILoginRequestService
     {
-        AdminLoginDTO AdminLogin(string email, string password);
     }
+        
 }
