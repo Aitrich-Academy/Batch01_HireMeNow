@@ -1,8 +1,7 @@
 ﻿using Domain.Models;
 using Domain.Services.AuthUser.Interfaces;
 using Domain.Services.AuthUser;
-using Domain.Services.Login.Interfaces;
-using Domain.Services.Login;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace HireMeNow_WebAPI.Extensions
@@ -14,13 +13,6 @@ namespace HireMeNow_WebAPI.Extensions
             services.AddDbContext<DbHireMeNowWebApiContext>(options =>
                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
             );
-
-            services.AddScoped<IAuthUserRepository, AuthUserRepository>();
-            services.AddScoped<IAuthUserService, AuthUserService>();
-            services.AddHttpContextAccessor();
-
-            services.AddScoped<ILoginRequestService, LoginRequestService>();
-            services.AddScoped<ILoginRequestRepository, LoginRequestRepository>();
 
             return services;
         }
