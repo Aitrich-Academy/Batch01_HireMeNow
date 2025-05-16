@@ -1,8 +1,15 @@
 ﻿using AutoMapper;
 using Domain.Models;
 using Domain.Services.Admin.DTOs;
+using Domain.Services.Authuser.DTOs;
+using Domain.Services.JobSeeker.Job.DTO;
+using Domain.Services.JobSeeker.JobSeekerProfile.DTO;
+using Domain.Services.Login.DTO;
 using Domain.Services.Login.DTOs;
+using Domain.Services.SignUp.DTO;
 using HireMeNow_WebAPI.API.Admin.RequestObjects;
+using HireMeNow_WebAPI.API.JobSeeker.Job.DTO;
+using HireMeNow_WebAPI.API.JobSeeker.JobSeekerCredentials.Requests;
 
 
 namespace HireMeNow_WebAPI.Extensions
@@ -44,7 +51,40 @@ namespace HireMeNow_WebAPI.Extensions
             CreateMap<IndustryRequestAdmin, Industry>();
             CreateMap<JobCategoryRequestAdmin, JobCategory>();
 
+
             //**********************************************************
+
+            //JobSeeker***********************************************
+
+            CreateMap<JobSeekerSignUpRequestDTO, SignUpRequest>().ReverseMap();
+            CreateMap<JobSeekerSignUpRequest, JobSeekerSignUpRequestDTO>().ReverseMap();
+            CreateMap<AuthUser, AuthUserDTO>().ReverseMap();
+            CreateMap<SignUpRequest, SystemUser>().ReverseMap();
+            CreateMap<AuthUser, JobSeeker>().ReverseMap();
+            CreateMap<AuthUser, SystemUser>().ReverseMap();
+            CreateMap<AuthUser, LoginDTO>().ReverseMap();
+            CreateMap<JobPostDTO, JobPost>().ReverseMap();
+            CreateMap<JobPost, JobPostDTO>()
+                      .ForMember(dest => dest.Location, opt => opt.MapFrom(src => src.Location.Name))
+                      .ForMember(dest => dest.CompanyName, opt => opt.MapFrom(src => src.Company.LegalName))
+                      .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.JobCategory.Name))
+                      .ForMember(dest => dest.IndustryName, opt => opt.MapFrom(src => src.Industry.Name));
+            CreateMap<JobApplicationDTO, JobApplication>().ReverseMap();
+            CreateMap<SavedJobDTO, SavedJob>().ReverseMap();
+            CreateMap<JobSeekerProfile, JobSeekerProfileDTO>().ReverseMap();
+            CreateMap<JobSeekerProfileUpdateDTO, JobSeekerProfile>().ReverseMap();
+            CreateMap<ResumeDTO, Resume>().ReverseMap();
+            CreateMap<JobSeekerSkillDTO, JobSeekerProfileSkill>().ReverseMap();
+            CreateMap<JobSeekerExperienceDTO, WorkExperience>().ReverseMap();
+            CreateMap<JobSeekerQualificationDTO, Qualification>().ReverseMap();
+            CreateMap<QualificationDTO, JobSeekerQualificationDTO>().ReverseMap();
+            CreateMap<QualificationDTO, UpdateQualificationDTO>().ReverseMap();
+            CreateMap<QualificationDTO, Qualification>().ReverseMap();
+            CreateMap<UpdateQualificationDTO, Qualification>().ReverseMap();
+            CreateMap<InterviewDTO, Interview>().ReverseMap();
+            CreateMap<Resume, ResumeViewDTO>().ReverseMap();
+
+            //***************************************************************************
         }
     }
 }

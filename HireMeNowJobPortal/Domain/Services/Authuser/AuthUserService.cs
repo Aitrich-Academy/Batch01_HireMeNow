@@ -1,5 +1,7 @@
-﻿using Domain.Services.AuthUser.Interfaces;
+﻿using Domain.Models;
+using Domain.Services.AuthUser.Interfaces;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,7 @@ namespace Domain.Services.AuthUser
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IAuthUserRepository _userRepository;
-
+        private readonly DbHireMeNowWebApiContext _context;
         public AuthUserService(IHttpContextAccessor httpContextAccessor, IAuthUserRepository userRepository)
         {
             _httpContextAccessor = httpContextAccessor;
@@ -27,6 +29,14 @@ namespace Domain.Services.AuthUser
                 result = _httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Sid).Value.ToString();
             }
             return result;
+        }
+
+        public Guid GetUserProfileId()
+        {
+            var seekerId = new Guid(GetUserId());
+            var profile = _context.JobSeekerProfiles.FirstOrDefault(j => j.JobSeekerId == seekerId);
+            Guid profileId = profile.Id;
+            return profileId;
         }
     }
 }

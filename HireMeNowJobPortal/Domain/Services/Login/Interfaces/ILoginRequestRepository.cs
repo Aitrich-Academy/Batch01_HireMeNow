@@ -11,6 +11,6 @@ namespace Domain.Services.Login.Interfaces
     public interface ILoginRequestRepository
     {
         Domain.Models.AuthUser GetUserByEmailPassword(string email, string password);
-
+        Guid LoggedUserId();
     }
 }

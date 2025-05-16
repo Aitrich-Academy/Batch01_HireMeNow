@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Domain.Services.AuthUser;
 using Domain.Services.AuthUser.Interfaces;
+using Domain.Services.Login.DTO;
 using Domain.Services.Login.DTOs;
 using Domain.Services.Login.Interfaces;
 using System;
@@ -54,6 +55,30 @@ namespace Domain.Services.Login
             userDto.Token = _authUserRepository.CreateToken(user);
             return userDto;
         }
+        public Guid LoggedUserId()
+        {
+            return _loginRequestRepository.LoggedUserId();
 
+        }
+
+        public LoginDTO login(string email, string password)
+        {
+            var user = _loginRequestRepository.GetUserByEmailPassword(email, password);
+            if (user == null)
+            {
+                return null;
+            }
+            else
+            {
+                if ((password == user.Password))
+                {
+                    var userReturn = _mapper.Map<LoginDTO>(user);
+                    userReturn.Token = _authUserRepository.CreateToken(user);
+                    return userReturn;
+                }
+                return null;
+            }
+        }
     }
 }
+
