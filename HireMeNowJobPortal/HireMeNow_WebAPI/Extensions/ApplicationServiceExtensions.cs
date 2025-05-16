@@ -7,6 +7,15 @@ using Domain.Services.Login.Interfaces;
 using Domain.Services.Login;
 using Domain.Services.Admin.Interfaces;
 using Domain.Services.Admin;
+using NETCore.MailKit.Core;
+using NETCore.MailKit.Extensions;
+using NETCore.MailKit.Infrastructure.Internal;
+using Domain.Services.SignUp.Interfaces;
+using Domain.Services.SignUp;
+using Domain.Services.JobSeeker.Job.Interfaces;
+using Domain.Services.JobSeeker.Job;
+using Domain.Services.JobSeeker.JobSeekerProfile.Interfaces;
+using Domain.Services.JobSeeker.JobSeekerProfile;
 
 namespace HireMeNow_WebAPI.Extensions
 {
@@ -32,6 +41,31 @@ namespace HireMeNow_WebAPI.Extensions
 
             //*****************************************************
 
+            //JobSeeker*******************************************
+            services.AddMailKit(config =>
+            {
+                config.UseMailKit(new MailKitOptions()
+                {
+                    Server = configuration["MailSettings:Host"],
+                    Port = int.Parse(configuration["MailSettings:Port"]),
+                    SenderName = configuration["MailSettings:DisplayName"],
+                    SenderEmail = configuration["MailSettings:UserMail"],
+                    Account = configuration["MailSettings:UserMail"],
+                    Password = configuration["MailSettings:Password"],
+                    Security = configuration.GetValue<bool>("MailSettings:UseSSL")
+                        ? true : false
+                });
+            });
+
+            services.AddScoped<IEmailService, EmailService>();
+            services.AddScoped<ISignUpRequestRepository, SignUpRepository>();
+            services.AddScoped<ISignUpRequestService, SignUpService>();
+            services.AddScoped<IJobRepository, JobRepository>();
+            services.AddScoped<IJobService, JobService>();
+            services.AddScoped<IJobSeekerProfileRepository, JobSeekerProfileRepository>();
+            services.AddScoped<IJobSeekerService, JobSeekerProfileService>();
+
+            //**************************************************************
             return services;
         }
     }
