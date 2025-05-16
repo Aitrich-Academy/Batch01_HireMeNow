@@ -314,376 +314,376 @@ namespace HireMeNow_WebAPI.API.Admin
                  return Problem("An error occurred while adding the location.");
             }
         }
-        ////UpdateLocation
-
-        //[HttpPut("locations/{locationId}")]
-        //public async Task<IActionResult> UpdateLocation([FromBody] LocationRequestAdmin updatedLocation, [FromRoute] Guid locationId)
-        //{
-        //    if (updatedLocation == null)
-        //    {
-        //        return BadRequest(new { Message = "Updated location data is required." });
-        //    }
-
-        //    try
-        //    {
-        //        var locationEntity = _mapper.Map<Location>(updatedLocation);
-
-        //        var locationDto = await _adminService.UpdateLocation(locationEntity, locationId);
-
-        //        if (locationDto == null)
-        //        {
-        //            return NotFound(new { Message = $"Location with ID {locationId} not found." });
-        //        }
-
-        //        return Ok(locationDto);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return Problem("An error occurred while updating the location.");
-        //    }
-        //}
-
-        ////RemoveLocationById
-
-        //[HttpDelete("locations/{locationId}")]
-        //public async Task<IActionResult> RemoveLocationById([FromRoute] Guid locationId)
-        //{
-        //    try
-        //    {
-        //        var deletedLocation = await _adminService.RemoveLocationById(locationId);
-
-        //        if (deletedLocation == null)
-        //        {
-        //            return NotFound(new { Message = $"Location with ID {locationId} not found." });
-        //        }
-
-        //        return Ok(deletedLocation); 
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return Problem("An error occurred while removing the location.");
-                
-        //        //var errorMessage = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
-        //        //return BadRequest(new { Message = "Failed to delete location", Details = errorMessage });
-
-        //    }
-        //}
-
-
-        ////GetSkills
-
-        //[HttpGet("skills")]
-        //public async Task<IActionResult> GetSkills()
-        //{
-        //    try
-        //    {
-        //        var skills = await _adminService.GetSkills();
-        //        return Ok(skills);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest("An error occurred while fetching skills.");
-        //    }
-        //}
-
-        ////GetSkillsById
-
-        //[HttpGet("skills/{id}")]
-        //public async Task<IActionResult> GetSkillsById(Guid id)
-        //{
-        //    var skill = await _adminService.GetSkillsById(id);
-
-        //    if (skill == null)
-        //    {
-        //        return NotFound(new { Message = $"Skill with ID {id} not found." });
-        //    }
-
-        //    return Ok(skill);
-        //}
-
-
-        ////AddSkill
-
-        //[HttpPost("skills")]
-        //public async Task<IActionResult> AddSkill([FromBody] SkillRequestAdmin skill)
-        //{
-        //    if (skill == null)
-        //    {
-        //        return BadRequest(new { Message = "Skill data is required." });
-        //    }
-
-        //    try
-        //    {
-        //        var skillEntity = _mapper.Map<Skill>(skill);
-        //        var skillDto = await _adminService.AddSkill(skillEntity);
-        //        return CreatedAtAction(nameof(GetSkillsById), new { id = skillDto.Id }, skillDto);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return Problem("An error occurred while adding the skill.");
-        //    }
-        //}
-
-        ////UpdateSkill
-
-        //[HttpPut("skills/{skillId}")]
-        //public async Task<IActionResult> UpdateSkill([FromBody] SkillRequestAdmin updatedSkill, [FromRoute] Guid skillId)
-        //{
-        //    if (updatedSkill == null)
-        //    {
-        //        return BadRequest(new { Message = "Updated skill data is required." });
-        //    }
-
-        //    try
-        //    {
-        //        var skillEntity = _mapper.Map<Skill>(updatedSkill);
-        //        var skillDto = await _adminService.UpdateSkill(skillEntity, skillId);
-
-        //        if (skillDto == null)
-        //        {
-        //            return NotFound(new { Message = $"Skill with ID {skillId} not found." });
-        //        }
-
-        //        return Ok(skillDto);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return Problem("An error occurred while updating the skill.");
-        //    }
-        //}
-
-        ////RemoveSkillById
-
-        //[HttpDelete("skills/{skillId}")]
-        //public async Task<IActionResult> RemoveSkillById([FromRoute] Guid skillId)
-        //{
-        //    try
-        //    {
-        //        var deletedSkill = await _adminService.RemoveSkillById(skillId);
-
-        //        if (deletedSkill == null)
-        //        {
-        //            return NotFound(new { Message = $"Skill with ID {skillId} not found." });
-        //        }
-
-        //        return Ok(deletedSkill);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return Problem("An error occurred while removing the skill.");
-        //        //return BadRequest($"Exception: {ex.Message}");
-        //    }
-        //}
-
-        ////GetIndustries
-
-        //[HttpGet("industries")]
-        //public async Task<IActionResult> GetIndustries()
-        //{
-        //    try
-        //    {
-        //        var industries = await _adminService.GetIndustries();
-        //        return Ok(industries);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest("An error occurred while fetching industries.");
-        //    }
-        //}
-
-        ////GetIndustryById
-
-        //[HttpGet("industries/{id}")]
-        //public async Task<IActionResult> GetIndustryById(Guid id)
-        //{
-        //    var industry = await _adminService.GetIndustryById(id);
-
-        //    if (industry == null)
-        //    {
-        //        return NotFound(new { Message = $"Industry with ID {id} not found." });
-        //    }
-
-        //    return Ok(industry);
-        //}
-
-        ////AddIndustry
-
-
-        //[HttpPost("industries")]
-        //public async Task<IActionResult> AddIndustry([FromBody] IndustryRequestAdmin industry)
-        //{
-        //    if (industry == null)
-        //    {
-        //        return BadRequest(new { Message = "Industry data is required." });
-        //    }
-
-        //    try
-        //    {
-        //        var industryEntity = _mapper.Map<Industry>(industry);
-        //        var industryDto = await _adminService.AddIndustry(industryEntity);
-        //        return CreatedAtAction(nameof(GetIndustryById), new { id = industryDto.Id }, industryDto);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return Problem("An error occurred while adding the industry.");
-        //    }
-        //}
-
-        ////UpdateIndustry
-
-        //[HttpPut("industries/{industryId}")]
-        //public async Task<IActionResult> UpdateIndustry([FromBody] IndustryRequestAdmin updatedIndustry, [FromRoute] Guid industryId)
-        //{
-        //    if (updatedIndustry == null)
-        //    {
-        //        return BadRequest(new { Message = "Updated industry data is required." });
-        //    }
-
-        //    try
-        //    {
-        //        var industryEntity = _mapper.Map<Industry>(updatedIndustry);
-        //        var industryDto = await _adminService.UpdateIndustry(industryEntity, industryId);
-
-        //        if (industryDto == null)
-        //        {
-        //            return NotFound(new { Message = $"Industry with ID {industryId} not found." });
-        //        }
-
-        //        return Ok(industryDto);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return Problem("An error occurred while updating the industry.");
-        //    }
-        //}
-
-
-        ////RemoveIndustryById
-
-        //[HttpDelete("industries/{industryId}")]
-        //public async Task<IActionResult> RemoveIndustryById([FromRoute] Guid industryId)
-        //{
-        //    try
-        //    {
-        //        var deletedIndustry = await _adminService.RemoveIndustryById(industryId);
-
-        //        if (deletedIndustry == null)
-        //        {
-        //            return NotFound(new { Message = $"Industry with ID {industryId} not found." });
-        //        }
-
-        //        return Ok(deletedIndustry);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return Problem("An error occurred while removing the industry.");
-        //    }
-        //}
-
-        ////GetJobCategories
-
-        //[HttpGet("jobcategories")]
-        //public async Task<IActionResult> GetJobCategories()
-        //{
-        //    try
-        //    {
-        //        var categories = await _adminService.GetJobCategories();
-        //        return Ok(categories);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return BadRequest("An error occurred while fetching categories.");
-        //    }
-        //}
-
-        ////GetJobCategoriesById
-
-        //[HttpGet("jobcategories/{id}")]
-        //public async Task<IActionResult> GetJobCategoryById(Guid id)
-        //{
-        //    var category = await _adminService.GetJobCategoryById(id);
-
-        //    if (category == null)
-        //    {
-        //        return NotFound(new { Message = $"Job category with ID {id} not found." });
-        //    }
-
-        //    return Ok(category);
-        //}
-
-        ////AddJobCategory
-
-
-        //[HttpPost("jobcategories")]
-        //public async Task<IActionResult> AddCategory([FromBody] JobCategoryRequestAdmin category)
-        //{
-        //    if (category == null)
-        //    {
-        //        return BadRequest(new { Message = "Job category data is required." });
-        //    }
-
-        //    try
-        //    {
-        //        var categoryEntity = _mapper.Map<JobCategory>(category);
-        //        var categoryDto = await _adminService.AddJobCategory(categoryEntity);
-        //        return CreatedAtAction(nameof(GetJobCategoryById), new { id = categoryDto.Id }, categoryDto);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return Problem("An error occurred while adding the job category.");
-        //    }
-        //}
-
-        ////UpdateJobCategory
-
-
-        //[HttpPut("jobcategories/{jobcategoryId}")]
-        //public async Task<IActionResult> UpdateJobcategory([FromBody] JobCategoryRequestAdmin updatedCategory,[FromRoute] Guid jobcategoryId)
-        //{
-        //    if (updatedCategory == null)
-        //    {
-        //        return BadRequest(new { Message = "Updated job category data is required." });
-        //    }
-
-        //    try
-        //    {
-        //        var categoryEntity = _mapper.Map<JobCategory>(updatedCategory);
-        //        var categoryDto = await _adminService.UpdateJobCategory(categoryEntity, jobcategoryId);
-
-        //        if (categoryDto == null)
-        //        {
-        //            return NotFound(new { Message = $"Category with ID {jobcategoryId} not found." });
-        //        }
-
-        //        return Ok(categoryDto);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return Problem("An error occurred while updating the job category.");
-        //    }
-        //}
-
-        ////RemoveJobCategoryById
-
-        //[HttpDelete("jobcategories/{jobcategoryId}")]
-        //public async Task<IActionResult> RemoveJobcategoryById([FromRoute] Guid jobcategoryId)
-        //{
-        //    try
-        //    {
-        //        var deletedCategory = await _adminService.RemoveJobCategoryById(jobcategoryId);
-
-        //        if (deletedCategory == null)
-        //        {
-        //            return NotFound(new { Message = $"Job Category with ID {jobcategoryId} not found." });
-        //        }
-
-        //        return Ok(deletedCategory);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return Problem("An error occurred while removing the job category.");
-        //    }
-        //}
+        //UpdateLocation
+
+        [HttpPut("locations/{locationId}")]
+        public async Task<IActionResult> UpdateLocation([FromBody] LocationRequestAdmin updatedLocation, [FromRoute] Guid locationId)
+        {
+            if (updatedLocation == null)
+            {
+                return BadRequest(new { Message = "Updated location data is required." });
+            }
+
+            try
+            {
+                var locationEntity = _mapper.Map<Location>(updatedLocation);
+
+                var locationDto = await _adminService.UpdateLocation(locationEntity, locationId);
+
+                if (locationDto == null)
+                {
+                    return NotFound(new { Message = $"Location with ID {locationId} not found." });
+                }
+
+                return Ok(locationDto);
+            }
+            catch (Exception ex)
+            {
+                return Problem("An error occurred while updating the location.");
+            }
+        }
+
+        //RemoveLocationById
+
+        [HttpDelete("locations/{locationId}")]
+        public async Task<IActionResult> RemoveLocationById([FromRoute] Guid locationId)
+        {
+            try
+            {
+                var deletedLocation = await _adminService.RemoveLocationById(locationId);
+
+                if (deletedLocation == null)
+                {
+                    return NotFound(new { Message = $"Location with ID {locationId} not found." });
+                }
+
+                return Ok(deletedLocation);
+            }
+            catch (Exception ex)
+            {
+                return Problem("An error occurred while removing the location.");
+
+                //var errorMessage = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+                //return BadRequest(new { Message = "Failed to delete location", Details = errorMessage });
+
+            }
+        }
+
+
+        //GetSkills
+
+        [HttpGet("skills")]
+        public async Task<IActionResult> GetSkills()
+        {
+            try
+            {
+                var skills = await _adminService.GetSkills();
+                return Ok(skills);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("An error occurred while fetching skills.");
+            }
+        }
+
+        //GetSkillsById
+
+        [HttpGet("skills/{id}")]
+        public async Task<IActionResult> GetSkillsById(Guid id)
+        {
+            var skill = await _adminService.GetSkillsById(id);
+
+            if (skill == null)
+            {
+                return NotFound(new { Message = $"Skill with ID {id} not found." });
+            }
+
+            return Ok(skill);
+        }
+
+
+        //AddSkill
+
+        [HttpPost("skills")]
+        public async Task<IActionResult> AddSkill([FromBody] SkillRequestAdmin skill)
+        {
+            if (skill == null)
+            {
+                return BadRequest(new { Message = "Skill data is required." });
+            }
+
+            try
+            {
+                var skillEntity = _mapper.Map<Skill>(skill);
+                var skillDto = await _adminService.AddSkill(skillEntity);
+                return CreatedAtAction(nameof(GetSkillsById), new { id = skillDto.Id }, skillDto);
+            }
+            catch (Exception ex)
+            {
+                return Problem("An error occurred while adding the skill.");
+            }
+        }
+
+        //UpdateSkill
+
+        [HttpPut("skills/{skillId}")]
+        public async Task<IActionResult> UpdateSkill([FromBody] SkillRequestAdmin updatedSkill, [FromRoute] Guid skillId)
+        {
+            if (updatedSkill == null)
+            {
+                return BadRequest(new { Message = "Updated skill data is required." });
+            }
+
+            try
+            {
+                var skillEntity = _mapper.Map<Skill>(updatedSkill);
+                var skillDto = await _adminService.UpdateSkill(skillEntity, skillId);
+
+                if (skillDto == null)
+                {
+                    return NotFound(new { Message = $"Skill with ID {skillId} not found." });
+                }
+
+                return Ok(skillDto);
+            }
+            catch (Exception ex)
+            {
+                return Problem("An error occurred while updating the skill.");
+            }
+        }
+
+        //RemoveSkillById
+
+        [HttpDelete("skills/{skillId}")]
+        public async Task<IActionResult> RemoveSkillById([FromRoute] Guid skillId)
+        {
+            try
+            {
+                var deletedSkill = await _adminService.RemoveSkillById(skillId);
+
+                if (deletedSkill == null)
+                {
+                    return NotFound(new { Message = $"Skill with ID {skillId} not found." });
+                }
+
+                return Ok(deletedSkill);
+            }
+            catch (Exception ex)
+            {
+                return Problem("An error occurred while removing the skill.");
+                //return BadRequest($"Exception: {ex.Message}");
+            }
+        }
+
+        //GetIndustries
+
+        [HttpGet("industries")]
+        public async Task<IActionResult> GetIndustries()
+        {
+            try
+            {
+                var industries = await _adminService.GetIndustries();
+                return Ok(industries);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("An error occurred while fetching industries.");
+            }
+        }
+
+        //GetIndustryById
+
+        [HttpGet("industries/{id}")]
+        public async Task<IActionResult> GetIndustryById(Guid id)
+        {
+            var industry = await _adminService.GetIndustryById(id);
+
+            if (industry == null)
+            {
+                return NotFound(new { Message = $"Industry with ID {id} not found." });
+            }
+
+            return Ok(industry);
+        }
+
+        //AddIndustry
+
+
+        [HttpPost("industries")]
+        public async Task<IActionResult> AddIndustry([FromBody] IndustryRequestAdmin industry)
+        {
+            if (industry == null)
+            {
+                return BadRequest(new { Message = "Industry data is required." });
+            }
+
+            try
+            {
+                var industryEntity = _mapper.Map<Industry>(industry);
+                var industryDto = await _adminService.AddIndustry(industryEntity);
+                return CreatedAtAction(nameof(GetIndustryById), new { id = industryDto.Id }, industryDto);
+            }
+            catch (Exception ex)
+            {
+                return Problem("An error occurred while adding the industry.");
+            }
+        }
+
+        //UpdateIndustry
+
+        [HttpPut("industries/{industryId}")]
+        public async Task<IActionResult> UpdateIndustry([FromBody] IndustryRequestAdmin updatedIndustry, [FromRoute] Guid industryId)
+        {
+            if (updatedIndustry == null)
+            {
+                return BadRequest(new { Message = "Updated industry data is required." });
+            }
+
+            try
+            {
+                var industryEntity = _mapper.Map<Industry>(updatedIndustry);
+                var industryDto = await _adminService.UpdateIndustry(industryEntity, industryId);
+
+                if (industryDto == null)
+                {
+                    return NotFound(new { Message = $"Industry with ID {industryId} not found." });
+                }
+
+                return Ok(industryDto);
+            }
+            catch (Exception ex)
+            {
+                return Problem("An error occurred while updating the industry.");
+            }
+        }
+
+
+        //RemoveIndustryById
+
+        [HttpDelete("industries/{industryId}")]
+        public async Task<IActionResult> RemoveIndustryById([FromRoute] Guid industryId)
+        {
+            try
+            {
+                var deletedIndustry = await _adminService.RemoveIndustryById(industryId);
+
+                if (deletedIndustry == null)
+                {
+                    return NotFound(new { Message = $"Industry with ID {industryId} not found." });
+                }
+
+                return Ok(deletedIndustry);
+            }
+            catch (Exception ex)
+            {
+                return Problem("An error occurred while removing the industry.");
+            }
+        }
+
+        //GetJobCategories
+
+        [HttpGet("jobcategories")]
+        public async Task<IActionResult> GetJobCategories()
+        {
+            try
+            {
+                var categories = await _adminService.GetJobCategories();
+                return Ok(categories);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("An error occurred while fetching categories.");
+            }
+        }
+
+        //GetJobCategoriesById
+
+        [HttpGet("jobcategories/{id}")]
+        public async Task<IActionResult> GetJobCategoryById(Guid id)
+        {
+            var category = await _adminService.GetJobCategoryById(id);
+
+            if (category == null)
+            {
+                return NotFound(new { Message = $"Job category with ID {id} not found." });
+            }
+
+            return Ok(category);
+        }
+
+        //AddJobCategory
+
+
+        [HttpPost("jobcategories")]
+        public async Task<IActionResult> AddCategory([FromBody] JobCategoryRequestAdmin category)
+        {
+            if (category == null)
+            {
+                return BadRequest(new { Message = "Job category data is required." });
+            }
+
+            try
+            {
+                var categoryEntity = _mapper.Map<JobCategory>(category);
+                var categoryDto = await _adminService.AddJobCategory(categoryEntity);
+                return CreatedAtAction(nameof(GetJobCategoryById), new { id = categoryDto.Id }, categoryDto);
+            }
+            catch (Exception ex)
+            {
+                return Problem("An error occurred while adding the job category.");
+            }
+        }
+
+        //UpdateJobCategory
+
+
+        [HttpPut("jobcategories/{jobcategoryId}")]
+        public async Task<IActionResult> UpdateJobcategory([FromBody] JobCategoryRequestAdmin updatedCategory, [FromRoute] Guid jobcategoryId)
+        {
+            if (updatedCategory == null)
+            {
+                return BadRequest(new { Message = "Updated job category data is required." });
+            }
+
+            try
+            {
+                var categoryEntity = _mapper.Map<JobCategory>(updatedCategory);
+                var categoryDto = await _adminService.UpdateJobCategory(categoryEntity, jobcategoryId);
+
+                if (categoryDto == null)
+                {
+                    return NotFound(new { Message = $"Category with ID {jobcategoryId} not found." });
+                }
+
+                return Ok(categoryDto);
+            }
+            catch (Exception ex)
+            {
+                return Problem("An error occurred while updating the job category.");
+            }
+        }
+
+        //RemoveJobCategoryById
+
+        [HttpDelete("jobcategories/{jobcategoryId}")]
+        public async Task<IActionResult> RemoveJobcategoryById([FromRoute] Guid jobcategoryId)
+        {
+            try
+            {
+                var deletedCategory = await _adminService.RemoveJobCategoryById(jobcategoryId);
+
+                if (deletedCategory == null)
+                {
+                    return NotFound(new { Message = $"Job Category with ID {jobcategoryId} not found." });
+                }
+
+                return Ok(deletedCategory);
+            }
+            catch (Exception ex)
+            {
+                return Problem("An error occurred while removing the job category.");
+            }
+        }
 
     }
 }
