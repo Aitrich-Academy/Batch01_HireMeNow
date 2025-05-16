@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Domain.Services.AuthUser;
 using Domain.Services.AuthUser.Interfaces;
+using Domain.Services.Login.DTOs;
 using Domain.Services.Login.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,36 @@ namespace Domain.Services.Login
             _mapper = mapper;
         }
 
-        
+
+        public AdminLoginDTO AdminLogin(string email, string password)
+        {
+            if (email == "admin@example.com" && password == "Admin@123")
+            {
+                var adminUser = new Domain.Models.AuthUser
+                {
+                    Id = Guid.Parse("11111111-1111-1111-1111-111111111111"),
+                    FirstName = "Admin",
+                    Email = email,
+                    Role = Domain.Enums.Role.ADMIN,
+                    Password = password
+                };
+
+                var userReturn = _mapper.Map<AdminLoginDTO>(adminUser);
+                userReturn.Token = _authUserRepository.CreateToken(adminUser);
+                return userReturn;
+            }
+
+
+            var user = _loginRequestRepository.GetUserByEmailPassword(email, password);
+            if (user == null)
+            {
+                return null;
+            }
+
+            var userDto = _mapper.Map<AdminLoginDTO>(user);
+            userDto.Token = _authUserRepository.CreateToken(user);
+            return userDto;
+        }
+
     }
 }

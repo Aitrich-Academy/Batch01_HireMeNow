@@ -38,7 +38,7 @@ public partial class DbHireMeNowWebApiContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Data Source=DESKTOP-C6EG1OJ;Initial Catalog=PROJECTDB;Integrated Security=True;Trust Server Certificate=True").UseLazyLoadingProxies();
+        optionsBuilder.UseSqlServer("Your Connection String").UseLazyLoadingProxies();
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
