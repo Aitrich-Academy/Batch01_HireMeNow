@@ -5,6 +5,8 @@ using Domain.Services.AuthUser;
 using Microsoft.EntityFrameworkCore;
 using Domain.Services.Login.Interfaces;
 using Domain.Services.Login;
+using Domain.Services.Admin.Interfaces;
+using Domain.Services.Admin;
 
 namespace HireMeNow_WebAPI.Extensions
 {
@@ -22,6 +24,13 @@ namespace HireMeNow_WebAPI.Extensions
 
             services.AddScoped<ILoginRequestService, LoginRequestService>();
             services.AddScoped<ILoginRequestRepository, LoginRequestRepository>();
+
+            //Admin************************************************
+
+            services.AddScoped<IAdminService, AdminServices>();
+            services.AddScoped<IAdminRepository, AdminRepository>();
+
+            //*****************************************************
 
             return services;
         }
