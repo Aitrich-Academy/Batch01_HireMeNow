@@ -38,5 +38,10 @@ namespace Domain.Services.AuthUser
             Guid profileId = profile.Id;
             return profileId;
         }
+
+        public CompanyUser GetUser(Guid userid)
+        {
+            return _userRepository.GetUser(userid);
+        }
     }
 }

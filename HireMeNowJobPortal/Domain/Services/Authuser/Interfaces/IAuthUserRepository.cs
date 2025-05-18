@@ -12,6 +12,7 @@ namespace Domain.Services.AuthUser.Interfaces
        Task<Domain.Models.AuthUser> AddAuthUserJS(Domain.Models.AuthUser authUser);
        Task<Domain.Models.AuthUser> AddAuthUserJP(Domain.Models.AuthUser authUser);
        string? CreateToken(Domain.Models.AuthUser user);
+        CompanyUser GetUser(Guid userid);
     }
 }
 
