@@ -163,7 +163,7 @@ namespace Domain.Services.Admin
             return count;
         }
 
-        public async Task<JobSeeker> GetJobSeekerById(Guid jobSeekerId)
+        public async Task<Domain.Models.JobSeeker> GetJobSeekerById(Guid jobSeekerId)
         {
             var jobSeeker = await _context.JobSeekers
                                           .Where(j => j.Id==jobSeekerId)
@@ -178,7 +178,7 @@ namespace Domain.Services.Admin
             return count;
         }
 
-        public async Task<List<JobSeeker>> GetJobSeekers()
+        public async Task<List<Domain.Models.JobSeeker>> GetJobSeekers()
         {
             return await _context.JobSeekers.ToListAsync();
         
