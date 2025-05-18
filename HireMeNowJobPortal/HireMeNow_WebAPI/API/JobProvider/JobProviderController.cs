@@ -1,24 +1,27 @@
 ﻿using AutoMapper;
 using Domain.Models;
 
-using Domain.Service.JobProvider.Interfaces;
+
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Domain.Service.JobProvider.DTOs;
+
 using Microsoft.AspNetCore.Authorization;
 using Domain.Service.SignUp.DTOs;
 using static System.Runtime.InteropServices.JavaScript.JSType;
-using Domain.Service.JobProvider;
-using HireMeNow_WebApi.API.JobProvider.RequestObjects;
+
+
 
 using HireMeNow_WebAPI.Controllers;
-using HireMeNow_WebApi.API.JobSeeker.RequestObjects;
+
 using Domain.Services.JobProvider.DTOs;
-using Domain.Service.JobProvider.Dtos;
+
 using Microsoft.AspNetCore.Http.HttpResults;
 using Domain.Services.Login.Interfaces;
+using Domain.Services.JobProvider.Interfaces;
+using HireMeNow_WebAPI.API.JobProvider.RequestObjects;
+using Domain.Services.JobProvider.Dtos;
 
-namespace HireMeNow_WebApi.API.JobProvider
+namespace HireMeNow_WebAPI.API.JobProvider
 {
 
 	[ApiController]

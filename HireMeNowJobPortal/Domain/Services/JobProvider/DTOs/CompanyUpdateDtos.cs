@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Service.JobProvider.Dtos
+namespace Domain.Services.JobProvider.Dtos
 {
 	public class CompanyUpdateDtos
 	{

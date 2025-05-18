@@ -1,18 +1,19 @@
 ﻿using AutoMapper;
 using Domain.Models;
-using Domain.Service.JobProvider.Dtos;
-using Domain.Service.JobProvider.DTOs;
+
 using Domain.Service.SignUp.DTOs;
 using Domain.Services.Admin.DTOs;
 using Domain.Services.Authuser.DTOs;
+using Domain.Services.JobProvider.Dtos;
 using Domain.Services.JobProvider.DTOs;
 using Domain.Services.JobSeeker.Job.DTO;
 using Domain.Services.JobSeeker.JobSeekerProfile.DTO;
 using Domain.Services.Login.DTO;
 using Domain.Services.Login.DTOs;
 using Domain.Services.SignUp.DTO;
-using HireMeNow_WebApi.API.JobProvider.RequestObjects;
+
 using HireMeNow_WebAPI.API.Admin.RequestObjects;
+using HireMeNow_WebAPI.API.JobProvider.RequestObjects;
 using HireMeNow_WebAPI.API.JobSeeker.Job.DTO;
 using HireMeNow_WebAPI.API.JobSeeker.JobSeekerCredentials.Requests;
 

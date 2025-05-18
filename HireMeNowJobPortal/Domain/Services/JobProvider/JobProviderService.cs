@@ -2,11 +2,12 @@
 using Domain.Helpers;
 using Domain.Models;
 
-using Domain.Service.JobProvider.Interfaces;
+
 
 using Domain.Service.SignUp.DTOs;
 using Domain.Services;
 using Domain.Services.AuthUser.Interfaces;
+using Domain.Services.JobProvider.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
@@ -14,7 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Service.JobProvider
+namespace Domain.Services.JobProvider
 {
     public class JobProviderService:IJobProviderService
     {
@@ -96,7 +97,7 @@ namespace Domain.Service.JobProvider
             try
             {
                 SignUpRequest signUpRequest = await _jobProviderRepository.GetSignupRequestByIdAsync(jobProviderSignupRequestId);
-                AuthUser authUser = new();
+                Domain.Models.AuthUser authUser = new();
                 if (signUpRequest.Status == Enums.Status.VERIFIED)
                 {
 
