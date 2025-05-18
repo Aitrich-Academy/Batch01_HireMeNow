@@ -1,19 +1,20 @@
 ﻿using AutoMapper;
 using Domain.Helpers;
 
-using Domain.Service.JobProvider.Dtos;
-using Domain.Service.JobProvider.DTOs;
-using Domain.Service.JobProvider.Interfaces;
+
 using Domain.Service.SignUp.DTOs;
 using Domain.Services.AuthUser.Interfaces;
-using HireMeNow_WebApi.API.JobProvider.RequestObjects;
+using Domain.Services.JobProvider.Dtos;
+using Domain.Services.JobProvider.DTOs;
+using Domain.Services.JobProvider.Interfaces;
+using HireMeNow_WebAPI.API.JobProvider.RequestObjects;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace HireMeNow_WebApi.API.JobProvider
+namespace HireMeNow_WebAPI.API.JobProvider
 {
 
     [Route("api/[controller]")]

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Domain.Enums;
 using Domain.Models;
-using Domain.Service.JobProvider.Interfaces;
+using Domain.Services.JobProvider.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Service.JobProvider
+namespace Domain.Services.JobProvider
 {
     public class JobProviderRepository : IJobProviderRepository
     {

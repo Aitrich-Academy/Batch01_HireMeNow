@@ -1,7 +1,7 @@
 ﻿using Domain.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HireMeNow_WebApi.API.JobProvider.RequestObjects
+namespace HireMeNow_WebAPI.API.JobProvider.RequestObjects
 {
 	public class AddCompanyRequestobject
 	{

@@ -16,8 +16,9 @@ using Domain.Services.JobSeeker.Job.Interfaces;
 using Domain.Services.JobSeeker.Job;
 using Domain.Services.JobSeeker.JobSeekerProfile.Interfaces;
 using Domain.Services.JobSeeker.JobSeekerProfile;
-using Domain.Service.JobProvider.Interfaces;
-using Domain.Service.JobProvider;
+
+using Domain.Services.JobProvider.Interfaces;
+using Domain.Services.JobProvider;
 
 namespace HireMeNow_WebAPI.Extensions
 {
@@ -72,12 +73,7 @@ namespace HireMeNow_WebAPI.Extensions
 
             //JOB PROVIDER****************************************************
 
-            services.AddScoped<IAuthUserRepository, AuthUserRepository>();
-            services.AddScoped<IAuthUserService, AuthUserService>();
-            services.AddHttpContextAccessor();
-
-            services.AddScoped<ILoginRequestService, LoginRequestService>();
-            services.AddScoped<ILoginRequestRepository, LoginRequestRepository>();
+    
 
 
             services.AddScoped<ICompanyService, Companyservice>();

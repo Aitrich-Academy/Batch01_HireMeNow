@@ -2,15 +2,16 @@
 using Domain.Helpers;
 using Domain.Models;
 
-using Domain.Service.JobProvider.Dtos;
-using Domain.Service.JobProvider.Interfaces;
+
 using Domain.Services.AuthUser.Interfaces;
-using HireMeNow_WebApi.API.JobProvider.RequestObjects;
+using Domain.Services.JobProvider.Dtos;
+using Domain.Services.JobProvider.Interfaces;
+using HireMeNow_WebAPI.API.JobProvider.RequestObjects;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HireMeNow_WebApi.API.JobProvider
+namespace HireMeNow_WebAPI.API.JobProvider
 {
 	[Route("api/[controller]")]
 	[ApiController]

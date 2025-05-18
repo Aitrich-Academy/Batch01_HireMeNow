@@ -1,16 +1,16 @@
 ﻿using AutoMapper;
 //using Domain.Helpers;
 using Domain.Models;
-using Domain.Service.JobProvider.Dtos;
-using Domain.Service.JobProvider.DTOs;
-using Domain.Service.JobProvider.Interfaces;
+using Domain.Services.JobProvider.Dtos;
+using Domain.Services.JobProvider.DTOs;
+using Domain.Services.JobProvider.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Service.JobProvider
+namespace Domain.Services.JobProvider
 {
     public class Companyservice : ICompanyService
     {

@@ -1,14 +1,14 @@
 ﻿using Domain.Helpers;
 using Domain.Models;
-using Domain.Service.JobProvider.Dtos;
-using Domain.Service.JobProvider.DTOs;
+using Domain.Services.JobProvider.Dtos;
+using Domain.Services.JobProvider.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Service.JobProvider.Interfaces
+namespace Domain.Services.JobProvider.Interfaces
 {
 	public interface ICompanyService
 	{

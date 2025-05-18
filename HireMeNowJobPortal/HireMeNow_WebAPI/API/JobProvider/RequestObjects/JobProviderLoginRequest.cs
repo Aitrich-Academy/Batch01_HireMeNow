@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace HireMeNow_WebApi.API.JobSeeker.RequestObjects
+namespace HireMeNow_WebAPI.API.JobProvider.RequestObjects
 {
     public class JobProviderLoginRequest
     {
