@@ -30,9 +30,21 @@ namespace Domain.Services.AuthUser
             throw new NotImplementedException();
         }
 
-        public Task<Models.AuthUser> AddAuthUserJS(Models.AuthUser authUser)
+        public async Task<Models.AuthUser> AddAuthUserJS(Models.AuthUser authUser)
         {
-            throw new NotImplementedException();
+            authUser.Role = Enums.Role.JOB_SEEKER;
+
+            await _context.AuthUsers.AddAsync(authUser);
+
+            Models.JobSeeker jobSeeker = _mapper.Map<Models.JobSeeker>(authUser);
+            await _context.JobSeekers.AddAsync(jobSeeker);
+
+            JobSeekerProfile jobSeekerProfile = new();
+            jobSeekerProfile.JobSeekerId = jobSeeker.Id;
+            await _context.JobSeekerProfiles.AddAsync(jobSeekerProfile);
+
+            _context.SaveChanges();
+            return authUser;
         }
 
         public string? CreateToken(Domain.Models.AuthUser user)
