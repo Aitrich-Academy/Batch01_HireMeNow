@@ -12,6 +12,7 @@ namespace Domain.Services.JobSeeker.Job
         public JobRepository(DbHireMeNowWebApiContext context)
         {
             _dbContext = context;
+
         }
         public async Task ApplyJob(JobApplication application)
         {

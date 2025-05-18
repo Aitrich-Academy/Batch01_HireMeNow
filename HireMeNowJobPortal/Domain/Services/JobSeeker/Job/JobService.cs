@@ -14,7 +14,8 @@ namespace Domain.Services.JobSeeker.Job
         private readonly IJobRepository _jobRepository;
         public JobService(IJobRepository jobRepository)
         {
-            _jobRepository = jobRepository;
+           _jobRepository = jobRepository;
+
         }
         public async Task ApplyJob(JobApplication application)
         {
