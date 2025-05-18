@@ -5,6 +5,7 @@ using Domain.Models;
 using Domain.Service.JobProvider.Interfaces;
 
 using Domain.Service.SignUp.DTOs;
+using Domain.Services;
 using Domain.Services.AuthUser.Interfaces;
 using System;
 using System.Collections.Generic;

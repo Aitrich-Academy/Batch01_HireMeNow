@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Org.BouncyCastle.Math.EC.ECCurve;
 
-namespace Domain.Service
+namespace Domain.Services
 {
     public class EmailService : IEmailService
     {
