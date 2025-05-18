@@ -89,7 +89,7 @@ namespace HireMeNow_WebAPI.Extensions
             services.AddScoped<IJobProviderService, JobProviderService>();
             services.AddScoped<IJobProviderRepository, JobProviderRepository>();
 
-            services.AddTransient<IEmailService, EmailService>();
+            services.AddTransient<Domain.Services.IEmailService, Domain.Services.EmailService>();
 
 
 
