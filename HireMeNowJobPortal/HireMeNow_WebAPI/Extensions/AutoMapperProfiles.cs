@@ -22,7 +22,7 @@ namespace HireMeNow_WebAPI.Extensions
 
             CreateMap<AuthUser, AdminLoginDTO>();
 
-            CreateMap<JobSeeker, JobSeekerDTOAdmin>().ReverseMap();
+            CreateMap<Domain.Models.JobSeeker, JobSeekerDTOAdmin>().ReverseMap();
 
             CreateMap<JobProviderCompany, JobProviderCompanyDTOAdmin>()
                      .ForMember(dest => dest.IndustryName,

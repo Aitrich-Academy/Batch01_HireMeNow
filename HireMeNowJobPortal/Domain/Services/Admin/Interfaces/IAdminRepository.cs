@@ -9,8 +9,8 @@ namespace Domain.Services.Admin.Interfaces
 {
     public interface IAdminRepository
     {
-         Task<List<JobSeeker>> GetJobSeekers();
-         Task<JobSeeker> GetJobSeekerById(Guid jobSeekerId);
+         Task<List<Domain.Models.JobSeeker>> GetJobSeekers();
+         Task<Domain.Models.JobSeeker> GetJobSeekerById(Guid jobSeekerId);
          int GetJobSeekerCount();
          Task<List<JobProviderCompany>> GetAllJobProviderCompanies();
          Task<JobProviderCompany> GetJobProviderCompanyById(Guid jobProviderCompanyId);
