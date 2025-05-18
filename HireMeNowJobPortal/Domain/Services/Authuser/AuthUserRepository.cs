@@ -25,9 +25,15 @@ namespace Domain.Services.AuthUser
             _mapper = mapper;
             _configuration = configuration;
         }
-        public Task<Models.AuthUser> AddAuthUserJP(Models.AuthUser authUser)
+        public async Task<Domain.Models.AuthUser> AddAuthUserJP(Domain.Models.AuthUser authUser)
         {
-            throw new NotImplementedException();
+            authUser.Role = Enums.Role.JOB_PROVIDER;
+            await _context.AuthUsers.AddAsync(authUser);
+            Models.CompanyUser jobProvider = _mapper.Map<Models.CompanyUser>(authUser);
+            await _context.CompanyUsers.AddAsync(jobProvider);
+
+            _context.SaveChanges();
+            return authUser;
         }
 
         public Task<Models.AuthUser> AddAuthUserJS(Models.AuthUser authUser)
@@ -75,6 +81,14 @@ namespace Domain.Services.AuthUser
 
             return jwt;
         }
+
+        public CompanyUser GetUser(Guid userid)
+        {
+            return _context.CompanyUsers.Where(e => e.Id == userid).FirstOrDefault();
+        }
+
+
+
     }
-    
+
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Domain.Models;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace Domain.Services.AuthUser.Interfaces
     {
         string GetUserId();
         Guid GetUserProfileId();
+        CompanyUser GetUser(Guid userid);
     }
 }
 
