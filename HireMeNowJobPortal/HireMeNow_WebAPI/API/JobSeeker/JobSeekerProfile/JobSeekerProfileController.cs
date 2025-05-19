@@ -23,22 +23,22 @@ namespace HireMeNow_WebAPI.API.JobSeeker.JobSeekerProfile
             _authUserService = authUserService;
         }
 
-        [HttpPost("CreateProfile")]
-        public async Task<IActionResult> CreateJobSeekerProfile(JobSeekerProfileDTO jobSeekerProfileDTO)
-        {
-            var jobseekerId= new Guid(_authUserService.GetUserId());
-            var addProfile = new Domain.Models.JobSeekerProfile
-            {
-                JobSeekerId=jobseekerId,
-                ResumeId = jobSeekerProfileDTO.ResumeId,
-                ProfileName=jobSeekerProfileDTO.ProfileName,
-                ProfileSummary=jobSeekerProfileDTO.ProfileSummary,
+        //[HttpPost("CreateProfile")]
+        //public async Task<IActionResult> CreateJobSeekerProfile(JobSeekerProfileDTO jobSeekerProfileDTO)
+        //{
+        //    var jobseekerId= new Guid(_authUserService.GetUserId());
+        //    var addProfile = new Domain.Models.JobSeekerProfile
+        //    {
+        //        JobSeekerId=jobseekerId,
+        //        ResumeId = jobSeekerProfileDTO.ResumeId,
+        //        ProfileName=jobSeekerProfileDTO.ProfileName,
+        //        ProfileSummary=jobSeekerProfileDTO.ProfileSummary,
 
-            };
-            await _jobSeekerService.CreateJobSeekerProfile(addProfile);
-            return Ok();
+        //    };
+        //    await _jobSeekerService.CreateJobSeekerProfile(addProfile);
+        //    return Ok();
           
-        }
+        //}
 
         [HttpPut("UpdateProfile{profileId:guid}")]
         public async Task<IActionResult> updateProfile([FromForm]JobSeekerProfileUpdateDTO jobSeekerProfile)
