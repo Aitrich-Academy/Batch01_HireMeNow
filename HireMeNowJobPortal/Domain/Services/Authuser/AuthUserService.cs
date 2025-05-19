@@ -16,10 +16,11 @@ namespace Domain.Services.AuthUser
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IAuthUserRepository _userRepository;
         private readonly DbHireMeNowWebApiContext _context;
-        public AuthUserService(IHttpContextAccessor httpContextAccessor, IAuthUserRepository userRepository)
+        public AuthUserService(IHttpContextAccessor httpContextAccessor, IAuthUserRepository userRepository, DbHireMeNowWebApiContext context)
         {
             _httpContextAccessor = httpContextAccessor;
             _userRepository = userRepository;
+            _context = context;
         }
         public string GetUserId()
         {
